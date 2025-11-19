@@ -48,11 +48,18 @@ ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj)
 
 void ScavTrap::attack(const std::string& target)
 {
+    if (energy_point > 0 && hit_point > 0)
+    {
         std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attak_damage << " points of damage!" << std::endl;
+        energy_point = energy_point - 1;
+    }
+    else
+        std::cout << "ScavTrap " << name << " can't attack" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
+    std::cout << "ScavTrap " << name << " Destrocter called" << std::endl;
 }
 
 
