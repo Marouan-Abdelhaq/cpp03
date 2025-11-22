@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 13:34:04 by mabdelha          #+#    #+#             */
-/*   Updated: 2025/11/20 13:32:35 by mabdelha         ###   ########.fr       */
+/*   Created: 2025/11/20 15:30:05 by mabdelha          #+#    #+#             */
+/*   Updated: 2025/11/20 18:03:02 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-    protected:
+    private:
         std::string name;
-        int hit_point;
-        int energy_point;
-        int attak_damage;
     public:
-        ClapTrap();
-        ClapTrap(std::string name);
-        ClapTrap(const ClapTrap& obj);
-        ClapTrap& operator=(const ClapTrap& obj);
+        DiamondTrap();
+        DiamondTrap(std::string name);
+        DiamondTrap(const DiamondTrap& obj);
+        DiamondTrap& operator=(const DiamondTrap& obj);
         void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
-        ~ClapTrap();
+        void whoAmI();
+        ~DiamondTrap();
 };
 
 #endif

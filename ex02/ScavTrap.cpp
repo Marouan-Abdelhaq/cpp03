@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:03:23 by mabdelha          #+#    #+#             */
-/*   Updated: 2025/11/21 02:35:13 by mabdelha         ###   ########.fr       */
+/*   Updated: 2025/11/21 01:51:37 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap " << name << " parameter constructor called" << std::endl;
     this->name = name;
     hit_point = 100;
     energy_point = 50;
     attak_damage = 20;
+    std::cout << "ScavTrap " << name << " parameter constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
